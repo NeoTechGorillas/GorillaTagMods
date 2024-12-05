@@ -8,22 +8,36 @@
     <title>How to Get Mods for Gorilla Tag (PC Only)</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
-        /* Default theme */
+        /* RGB Background Animation */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
+            background: linear-gradient(45deg, #ff0066, #00ccff, #00ff66, #cc00ff, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header {
-            background-color: #4CAF50;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(76, 175, 80, 0.9);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px 20px;
             font-size: 24px;
+            z-index: 1000;
         }
 
         h1 {
@@ -31,15 +45,11 @@
             margin: 0;
         }
 
-        h2, h3 {
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
         main {
-            padding: 40px 20px;
+            padding: 120px 20px 40px;
             max-width: 1200px;
             margin: 0 auto;
+            scroll-behavior: smooth;
         }
 
         .section {
@@ -58,6 +68,11 @@
         .step:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2, h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -93,28 +108,31 @@
             text-decoration: underline;
         }
 
+        /* Button Styles */
         .btn {
             display: inline-block;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #ccc;
+            color: #333;
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-right: 10px;
+            margin-top: 10px;
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #b3b3b3;
             transform: scale(1.05);
         }
 
         .btn-secondary {
-            background-color: #555;
+            background-color: #888;
         }
 
         .btn-secondary:hover {
-            background-color: #444;
+            background-color: #777;
         }
 
         .step img {
