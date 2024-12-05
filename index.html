@@ -6,8 +6,8 @@
     <meta name="description" content="How to get mods for Gorilla Tag using BepInEx (PC only)">
     <meta name="author" content="NeoTechGorillas">
     <title>How to Get Mods for Gorilla Tag (PC Only)</title>
-    <style>
-        /* Global Styles */
+    <style id="theme-style">
+        /* Default theme */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -38,7 +38,6 @@
             color: #4CAF50;
         }
 
-        /* Main Layout */
         main {
             padding: 30px;
         }
@@ -92,7 +91,6 @@
             text-decoration: underline;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background-color: #4CAF50;
@@ -109,20 +107,33 @@
             transform: scale(1.05);
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header {
-                font-size: 20px;
-                padding: 20px;
-            }
+        .settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
 
-            .step {
-                padding: 15px;
-            }
+        .settings-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
 
-            .btn {
-                padding: 8px 16px;
-            }
+        .settings-content label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .settings-content select {
+            width: 100%;
+            padding: 5px;
         }
     </style>
 </head>
@@ -150,7 +161,7 @@
             <h3>1. Backup Your Game Files</h3>
             <p>Always create a backup of your game files to avoid any issues.</p>
         </div>
-        
+
         <div class="step">
             <h3>2. Download BepInEx</h3>
             <p>You'll need BepInEx for modding. Download it from the official page:</p>
@@ -159,8 +170,9 @@
 
         <div class="step">
             <h3>3. Extract BepInEx Files</h3>
-            <p>After downloading, extract the files into your Gorilla Tag directory. Typically, the path is:</p>
+            <p>After downloading, extract the files into your Gorilla Tag directory. Typically, the paths are:</p>
             <code>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</code>
+            <code>C:\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag</code>
         </div>
 
         <div class="step">
@@ -190,11 +202,107 @@
             <li><a href="https://github.com/BepInEx/BepInEx" target="_blank" class="btn">BepInEx GitHub</a></li>
         </ul>
     </div>
+
+    <button class="btn" onclick="openSettings()">Open Settings</button>
 </main>
+
+<div id="settings-modal" class="settings-modal">
+    <div class="settings-content">
+        <h3>Settings</h3>
+        <label for="theme-select">Select Theme:</label>
+        <select id="theme-select">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+        </select>
+        <button class="btn" onclick="saveSettings()">Save Settings</button>
+        <button class="btn" onclick="closeSettings()">Close</button>
+    </div>
+</div>
 
 <footer>
     <p>Created by <strong>NeoTechGorillas</strong> | Visit us on <a href="https://github.com/NeoTechGorillas" target="_blank">GitHub</a></p>
 </footer>
+
+<script>
+    const themeStyle = document.getElementById('theme-style');
+    const themeSelect = document.getElementById('theme-select');
+    const settingsModal = document.getElementById('settings-modal');
+
+    function openSettings() {
+        settingsModal.style.display = 'flex';
+    }
+
+    function closeSettings() {
+        settingsModal.style.display = 'none';
+    }
+
+    function saveSettings() {
+        const selectedTheme = themeSelect.value;
+        localStorage.setItem('theme', selectedTheme);
+        applyTheme(selectedTheme);
+        closeSettings();
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            themeStyle.innerHTML = `
+                body {
+                    background-color: #333;
+                    color: #f0f4f8;
+                }
+
+                header {
+                    background-color: #222;
+                    color: #fff;
+                }
+
+                h2, h3 {
+                    color: #4CAF50;
+                }
+
+                .step {
+                    background-color: #444;
+                    color: #fff;
+                }
+
+                footer {
+                    background-color: #222;
+                }
+            `;
+        } else {
+            themeStyle.innerHTML = `
+                body {
+                    background-color: #f0f4f8;
+                    color: #333;
+                }
+
+                header {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                h2, h3 {
+                    color: #4CAF50;
+                }
+
+                .step {
+                    background-color: #ffffff;
+                    color: #333;
+                }
+
+                footer {
+                    background-color: #333;
+                }
+            `;
+        }
+    }
+
+    window.onload = () => {
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        themeSelect.value = savedTheme;
+        applyTheme(savedTheme);
+    }
+</script>
 
 </body>
 </html>
