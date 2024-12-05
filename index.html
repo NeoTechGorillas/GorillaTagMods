@@ -4,75 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How to get mods for Gorilla Tag using BepInEx (PC only)">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="NeoTechGorillas">
     <title>How to Get Mods for Gorilla Tag (PC Only)</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 40px 0;
+            font-size: 24px;
         }
 
-        h1, h2 {
-            margin-bottom: 0.5em;
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        h2 {
+            color: #4CAF50;
         }
 
         h3 {
             color: #4CAF50;
         }
 
+        /* Main Layout */
         main {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            padding-left: 0;
         }
 
         li {
-            margin-bottom: 10px;
+            margin: 10px 0;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f8f8f8;
+            padding: 5px;
+            border-radius: 5px;
         }
 
         footer {
-            text-align: center;
-            padding: 10px;
             background-color: #333;
             color: white;
-            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
         }
 
-        a {
+        footer a {
             color: #4CAF50;
             text-decoration: none;
         }
 
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
-        .step {
-            background-color: #fff;
-            padding: 15px;
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .step ol {
-            margin-left: 20px;
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
         }
 
-        .step li {
-            margin: 8px 0;
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 20px;
+            }
+
+            .step {
+                padding: 15px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
@@ -80,62 +130,70 @@
 
 <header>
     <h1>How to Get Mods for Gorilla Tag (PC Only)</h1>
-    <p>Follow these steps to install mods on your PC version of Gorilla Tag using BepInEx!</p>
+    <p>Follow these easy steps to install mods on your PC version of Gorilla Tag!</p>
 </header>
 
 <main>
-    <section>
+    <div class="section">
         <h2>What You Need</h2>
-        <p>To get started with mods for Gorilla Tag on PC, make sure you have the following:</p>
+        <p>Before you begin, make sure you have the following:</p>
         <ul>
             <li>A PC with Steam and Gorilla Tag installed.</li>
             <li>SteamVR setup if you're using a VR headset.</li>
-            <li>Basic file management knowledge (extracting files, navigating directories, etc.).</li>
+            <li>Basic file management skills (extracting files, navigating folders, etc.).</li>
         </ul>
-    </section>
+    </div>
 
-    <section class="step">
+    <div class="section">
         <h2>Step-by-Step Installation Guide</h2>
-        <ol>
-            <li><strong>Backup Your Game Files</strong> - Always create a backup of your game files in case something goes wrong.</li>
-            <li><strong>Download BepInEx</strong> - This is the modding framework you need for installing mods in Gorilla Tag.
-                <ul>
-                    <li>Go to the official BepInEx GitHub page: <a href="https://github.com/BepInEx/BepInEx/releases" target="_blank">Download BepInEx</a>.</li>
-                    <li>Make sure you choose the correct version (for Unity games) and download the zip file.</li>
-                </ul>
-            </li>
-            <li><strong>Extract BepInEx Files</strong> - After downloading BepInEx, extract the files to your Gorilla Tag installation folder. This is typically located at:
-                <code>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</code>.
-                <ul>
-                    <li>Make sure all the files from the extracted BepInEx folder are placed in this directory (e.g., <code>BepInEx</code>, <code>doorstop_config.ini</code>, etc.).</li>
-                </ul>
-            </li>
-            <li><strong>Download Mods</strong> - Find mods from trusted sources like Monke Mod, AKA, PC Modding group!
-                <ul>
-                    <li><a href="https://discord.gg/monkemod" target="_blank">MonkeMod - Gorilla Tag Mods</a></li>
-                </ul>
-            </li>
-            <li><strong>Install Mods</strong> - Once you've downloaded the mod, extract its contents into the <code>BepInEx/plugins</code> folder inside your Gorilla Tag directory.
-                <ul>
-                    <li>The mod's DLL file should go into the <code>plugins</code> folder.</li>
-                </ul>
-            </li>
-            <li><strong>Launch Gorilla Tag</strong> - Start the game via Steam, and you should see the mods active in-game.</li>
-        </ol>
-    </section>
+        <div class="step">
+            <h3>1. Backup Your Game Files</h3>
+            <p>Always create a backup of your game files to avoid any issues.</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Download BepInEx</h3>
+            <p>You'll need BepInEx for modding. Download it from the official page:</p>
+            <a href="https://github.com/BepInEx/BepInEx/releases" class="btn" target="_blank">Download BepInEx</a>
+        </div>
 
-    <section>
+        <div class="step">
+            <h3>3. Extract BepInEx Files</h3>
+            <p>After downloading, extract the files into your Gorilla Tag directory. Typically, the path is:</p>
+            <code>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</code>
+        </div>
+
+        <div class="step">
+            <h3>4. Download Mods</h3>
+            <p>Get mods from trusted sources. Here are some recommended modding groups:</p>
+            <ul>
+                <li><a href="https://discord.gg/monkemod" class="btn" target="_blank">MonkeMod - Gorilla Tag Mods</a></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>5. Install Mods</h3>
+            <p>Place the downloaded mod's DLL file into the <code>BepInEx/plugins</code> folder inside the Gorilla Tag directory.</p>
+        </div>
+
+        <div class="step">
+            <h3>6. Launch Gorilla Tag</h3>
+            <p>Once you've installed your mods, launch the game through Steam, and the mods should be active!</p>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Additional Resources</h2>
-        <p>If you're looking for more mods or help, check out these resources:</p>
+        <p>For more mods or help, check out these links:</p>
         <ul>
-            <li><a href="https://discord.gg/monkemod" target="_blank">MonkeMod - Gorilla Tag Mods</a></li>
-            <li><a href="https://github.com/BepInEx/BepInEx" target="_blank">BepInEx GitHub</a></li>
+            <li><a href="https://discord.gg/monkemod" target="_blank" class="btn">MonkeMod - Gorilla Tag Mods</a></li>
+            <li><a href="https://github.com/BepInEx/BepInEx" target="_blank" class="btn">BepInEx GitHub</a></li>
         </ul>
-    </section>
+    </div>
 </main>
 
 <footer>
-    <p>Made by Your Name | Check out more at <a href="https://github.com/NeoTechGorillas" target="_blank">Your GitHub</a></p>
+    <p>Created by <strong>NeoTechGorillas</strong> | Visit us on <a href="https://github.com/NeoTechGorillas" target="_blank">GitHub</a></p>
 </footer>
 
 </body>
