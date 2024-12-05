@@ -18,7 +18,7 @@
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #ff0066, #00ccff, #00ff66, #cc00ff, #ffcc00);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: gradient 5s ease infinite; /* Faster RGB effect */
             color: white;
             height: 100%;
             overflow-x: hidden;
@@ -37,21 +37,24 @@
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 4.5em;
+            font-weight: bold;
             margin-top: 50px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
         }
 
         h2 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-top: 40px;
             color: #4CAF50;
+            font-weight: bold;
         }
 
         h3 {
-            font-size: 1.8em;
+            font-size: 2em;
             margin: 20px 0;
             color: #00ff66;
+            font-weight: bold;
         }
 
         p {
@@ -74,17 +77,17 @@
         }
 
         .step {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.85); /* Darker box */
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .step:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
         }
 
         .step img {
@@ -108,6 +111,7 @@
             border-radius: 8px;
             transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s;
             margin-top: 15px;
+            font-weight: bold;
         }
 
         .btn:hover {
@@ -165,10 +169,6 @@
             overflow-wrap: break-word;
         }
 
-        .scrolling-content {
-            overflow-y: auto;
-            max-height: 80vh;
-        }
     </style>
 </head>
 <body>
@@ -189,39 +189,37 @@
 
     <div class="step">
         <h2>Step-by-Step Guide</h2>
-        <div class="scrolling-content">
-            <div class="step">
-                <h3>1. Backup Your Game Files</h3>
-                <p>Always back up your game files to avoid any mishaps while modding.</p>
-            </div>
+        <div class="step">
+            <h3>1. Backup Your Game Files</h3>
+            <p>Always back up your game files to avoid any mishaps while modding.</p>
+        </div>
 
-            <div class="step">
-                <h3>2. Download BepInEx</h3>
-                <p>BepInEx is a modding framework. Download it from the official site:</p>
-                <a href="https://github.com/BepInEx/BepInEx/releases" class="btn" target="_blank">Download BepInEx</a>
-            </div>
+        <div class="step">
+            <h3>2. Download BepInEx</h3>
+            <p>BepInEx is a modding framework. Download it from the official site:</p>
+            <a href="https://github.com/BepInEx/BepInEx/releases" class="btn" target="_blank">Download BepInEx</a>
+        </div>
 
-            <div class="step">
-                <h3>3. Extract BepInEx Files</h3>
-                <p>Extract the downloaded BepInEx files into your Gorilla Tag directory:</p>
-                <pre><code>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</code></pre>
-            </div>
+        <div class="step">
+            <h3>3. Extract BepInEx Files</h3>
+            <p>Extract the downloaded BepInEx files into your Gorilla Tag directory:</p>
+            <pre><code>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</code></pre>
+        </div>
 
-            <div class="step">
-                <h3>4. Download Mods</h3>
-                <p>Get mods from trusted sources like:</p>
-                <a href="https://discord.gg/monkemod" class="btn" target="_blank">MonkeMod - Gorilla Tag Mods</a>
-            </div>
+        <div class="step">
+            <h3>4. Download Mods</h3>
+            <p>Get mods from trusted sources like:</p>
+            <a href="https://discord.gg/monkemod" class="btn" target="_blank">MonkeMod - Gorilla Tag Mods</a>
+        </div>
 
-            <div class="step">
-                <h3>5. Install Mods</h3>
-                <p>Place the mod's DLL files in the <code>BepInEx/plugins</code> folder within your Gorilla Tag directory.</p>
-            </div>
+        <div class="step">
+            <h3>5. Install Mods</h3>
+            <p>Place the mod's DLL files in the <code>BepInEx/plugins</code> folder within your Gorilla Tag directory.</p>
+        </div>
 
-            <div class="step">
-                <h3>6. Launch Gorilla Tag</h3>
-                <p>After installing the mods, launch Gorilla Tag through Steam, and enjoy the new features!</p>
-            </div>
+        <div class="step">
+            <h3>6. Launch Gorilla Tag</h3>
+            <p>After installing the mods, launch Gorilla Tag through Steam, and enjoy the new features!</p>
         </div>
     </div>
 
