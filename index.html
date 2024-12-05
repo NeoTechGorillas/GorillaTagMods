@@ -6,7 +6,8 @@
     <meta name="description" content="How to get mods for Gorilla Tag using BepInEx (PC only)">
     <meta name="author" content="NeoTechGorillas">
     <title>How to Get Mods for Gorilla Tag (PC Only)</title>
-    <style id="theme-style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
         /* Default theme */
         body {
             font-family: 'Roboto', sans-serif;
@@ -21,7 +22,7 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
             font-size: 24px;
         }
 
@@ -30,16 +31,15 @@
             margin: 0;
         }
 
-        h2 {
+        h2, h3 {
             color: #4CAF50;
-        }
-
-        h3 {
-            color: #4CAF50;
+            margin-bottom: 10px;
         }
 
         main {
-            padding: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section {
@@ -51,6 +51,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -80,6 +81,7 @@
             color: white;
             padding: 15px;
             text-align: center;
+            font-size: 14px;
         }
 
         footer a {
@@ -107,34 +109,20 @@
             transform: scale(1.05);
         }
 
-        .settings-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
+        .btn-secondary {
+            background-color: #555;
         }
 
-        .settings-content {
-            background-color: white;
-            padding: 20px;
+        .btn-secondary:hover {
+            background-color: #444;
+        }
+
+        .step img {
+            max-width: 100%;
+            margin-top: 20px;
             border-radius: 8px;
-            width: 300px;
         }
 
-        .settings-content label {
-            display: block;
-            margin: 10px 0;
-        }
-
-        .settings-content select {
-            width: 100%;
-            padding: 5px;
-        }
     </style>
 </head>
 <body>
@@ -157,6 +145,7 @@
 
     <div class="section">
         <h2>Step-by-Step Installation Guide</h2>
+
         <div class="step">
             <h3>1. Backup Your Game Files</h3>
             <p>Always create a backup of your game files to avoid any issues.</p>
@@ -203,106 +192,14 @@
         </ul>
     </div>
 
-    <button class="btn" onclick="openSettings()">Open Settings</button>
-</main>
-
-<div id="settings-modal" class="settings-modal">
-    <div class="settings-content">
-        <h3>Settings</h3>
-        <label for="theme-select">Select Theme:</label>
-        <select id="theme-select">
-            <option value="default">Default</option>
-            <option value="dark">Dark</option>
-        </select>
-        <button class="btn" onclick="saveSettings()">Save Settings</button>
-        <button class="btn" onclick="closeSettings()">Close</button>
+    <div class="section">
+        <a href="https://neotechgorillas.github.io/GorillaModManager/" class="btn btn-secondary" target="_blank">Visit Gorilla Mod Manager</a>
     </div>
-</div>
+</main>
 
 <footer>
     <p>Created by <strong>NeoTechGorillas</strong> | Visit us on <a href="https://github.com/NeoTechGorillas" target="_blank">GitHub</a></p>
 </footer>
-
-<script>
-    const themeStyle = document.getElementById('theme-style');
-    const themeSelect = document.getElementById('theme-select');
-    const settingsModal = document.getElementById('settings-modal');
-
-    function openSettings() {
-        settingsModal.style.display = 'flex';
-    }
-
-    function closeSettings() {
-        settingsModal.style.display = 'none';
-    }
-
-    function saveSettings() {
-        const selectedTheme = themeSelect.value;
-        localStorage.setItem('theme', selectedTheme);
-        applyTheme(selectedTheme);
-        closeSettings();
-    }
-
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            themeStyle.innerHTML = `
-                body {
-                    background-color: #333;
-                    color: #f0f4f8;
-                }
-
-                header {
-                    background-color: #222;
-                    color: #fff;
-                }
-
-                h2, h3 {
-                    color: #4CAF50;
-                }
-
-                .step {
-                    background-color: #444;
-                    color: #fff;
-                }
-
-                footer {
-                    background-color: #222;
-                }
-            `;
-        } else {
-            themeStyle.innerHTML = `
-                body {
-                    background-color: #f0f4f8;
-                    color: #333;
-                }
-
-                header {
-                    background-color: #4CAF50;
-                    color: white;
-                }
-
-                h2, h3 {
-                    color: #4CAF50;
-                }
-
-                .step {
-                    background-color: #ffffff;
-                    color: #333;
-                }
-
-                footer {
-                    background-color: #333;
-                }
-            `;
-        }
-    }
-
-    window.onload = () => {
-        const savedTheme = localStorage.getItem('theme') || 'default';
-        themeSelect.value = savedTheme;
-        applyTheme(savedTheme);
-    }
-</script>
 
 </body>
 </html>
